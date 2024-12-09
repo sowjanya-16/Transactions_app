@@ -1,0 +1,23 @@
+trigger:
+- master
+ 
+pool:
+  vmImage: ubuntu-latest
+variables:
+  - group: "OX"  # Reference a variable group named "OX" that contains secrets like OX_API_KEY
+ 
+stages:
+  - stage: OX_Security_Scan
+    displayName: OX Security Scan
+    jobs:
+      - job: OX
+        displayName: Run OX Security Scan
+        steps:
+          - script: |
+              docker run \
+              -e OX_HOST_URL=$(OX_HOST_URL) \
+              -e OX_API_KEY=$(OX_API_KEY) \
+              -e OX_DISABLE_SSL_VALIDATION=$(OX_DISABLE_SSL_VALIDATION) \
+              --env-file <(env | grep 'SYSTEM_\|BUILD_') \
+              oxsecurity/ox-block-mode:latest
+            displayName: Execute OX Security Scan1
