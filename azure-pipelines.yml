@@ -11,7 +11,7 @@ stages:
     displayName: OX Security Scan
     jobs:
       - job: OX
-        displayName: Run OX Security Scan
+        displayName: Run OX Security Scan1
         steps:
           - script: |
               docker run \
