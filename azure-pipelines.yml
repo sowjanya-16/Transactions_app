@@ -7,7 +7,7 @@
 #   - name: AWS_REGION
 #     value: 'us-east-1'  # Change if needed
 #   - name: ECR_PUBLIC_REPO
-#     value: 'public.ecr.aws/w2y7d4d8/adhoc'  # Your public AWS ECR repo 
+#       # Your public AWS ECR repo 
 #   - name: IMAGE_TAG
 #     value: 'latest'
 #   - name: REPORTS_DIR
@@ -40,8 +40,7 @@
 
 #   - script: |
 #       cd $(Build.SourcesDirectory)
-#       git config --global user.email "venkatasowjanya231@gmail.com" 
-#       git config --global user.name "sowjanya-16" 
+ 
 
 #       # Set remote URL with GitHub credentials from variable group
 #       git remote set-url origin https://$(GITHUB_USERNAME):$(GITHUB_TOKEN)@github.com/sowjanya-16/Transactions_app.git  
